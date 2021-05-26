@@ -4,7 +4,7 @@ import json, time
 import requests
 
 url = "http://try.star-lab.ai:9003/predictions/face_lm_3d"
-# url = "http://localhost:9003/predictions/face_lm_3d"
+url = "http://localhost:9003/predictions/face_lm_3d"
 img_path = "./assets/sida_1.png"
 headers = {
   'Content-Type': 'image/png'
