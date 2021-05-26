@@ -4,7 +4,7 @@ In this repository, I am practicing how to deploy a face landmark application as
 
 The face landmark application is from [https://github.com/1adrianb/face-alignment](https://github.com/1adrianb/face-alignment).
 
-![source image](assets/sida_2.png)
+![source image](assets/sida_1.png)
 ![demo output](assets/output-remote.png)
 
 ## Prerequisites

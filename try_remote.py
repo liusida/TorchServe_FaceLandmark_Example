@@ -3,9 +3,9 @@
 import json, time
 import requests
 
-url = "http://try.star-lab.ai:9003/predictions/face_lm_3d"
+# url = "http://try.star-lab.ai:9003/predictions/face_lm_3d"
 url = "http://localhost:9003/predictions/face_lm_3d"
-img_path = "./assets/sida_2.png"
+img_path = "./assets/sida_1.png"
 headers = {
   'Content-Type': 'image/png'
 }
@@ -54,7 +54,11 @@ def plot(preds, input_img, only_2d=True):
                 }
 
     fig = plt.figure()
-    ax = fig.add_subplot(1, 1 if only_2d else 2, 1)
+    ax = plt.Axes(fig, [0., 0., 1., 1.])
+    ax.set_axis_off()
+    fig.add_axes(ax)
+
+    # ax = fig.add_subplot(1, 1 if only_2d else 2, 1)
     ax.imshow(input_img)
 
     for pred_type in pred_types.values():
@@ -64,7 +68,7 @@ def plot(preds, input_img, only_2d=True):
 
     ax.axis('off')
     os.makedirs("debug", exist_ok=True)
-    plt.savefig("debug/output-remote.png")
+    plt.savefig("debug/output-remote.png", dpi=50)
 
 # Read the image again in the format of numpy array, for plotting purpose.
 np_img = image.imread(img_path)
