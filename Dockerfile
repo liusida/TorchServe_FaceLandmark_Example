@@ -13,4 +13,4 @@ RUN apt-get install ffmpeg libsm6 libxext6  -y
 
 # Copy the cached models into docker, to avoid download at runtime.
 USER model-server
-COPY --chown=model-server:model-server ./model_store/face_lm_3d/downloaded/* /home/model-server/.cache/torch/hub/checkpoints/
+COPY --chown=model-server:model-server ./model_store/face_lm_3d/models/* /home/model-server/.cache/torch/hub/checkpoints/
