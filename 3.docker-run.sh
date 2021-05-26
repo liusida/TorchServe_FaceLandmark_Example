@@ -10,7 +10,7 @@ mkdir -p logs/face_lm_3d
 mkdir -p debug/
 
 # Run the container
-docker run -it --rm --name=torchserve-face_lm_3d \
+docker run -d --rm --name=torchserve-face_lm_3d \
     --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 \
     -p$(expr $BASE_SERVE_PORT + 2):8080 \
     -p$(expr $BASE_MANAGE_PORT + 2):8081 \
@@ -19,6 +19,3 @@ docker run -it --rm --name=torchserve-face_lm_3d \
     --mount type=bind,source=$PWD/debug,target=/tmp/debug \
     face_lm_3d:latest \
     torchserve --model-store=/tmp/models --ts-config=/tmp/models/torchserve.cfg
-
-# remove log folder if needed
-# rm logs/face_lm_3d -rf

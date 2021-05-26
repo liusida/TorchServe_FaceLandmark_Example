@@ -3,9 +3,9 @@
 import json, time
 import requests
 
-url = "http://api.star-lab.ai:9003/predictions/face_lm_3d"
-url = "http://localhost:9003/predictions/face_lm_3d"
-img_path = "./assets/sida_2.png"
+url = "http://try.star-lab.ai:9003/predictions/face_lm_3d"
+# url = "http://localhost:9003/predictions/face_lm_3d"
+img_path = "./assets/sida_1.png"
 headers = {
   'Content-Type': 'image/png'
 }
@@ -22,7 +22,7 @@ print(f"time: {end-start}")
 
 # Parse the response.
 response = json.loads(response.text)
-print(response)
+# print(response)
 
 # Visualize the results.
 import collections, os
@@ -33,7 +33,7 @@ from matplotlib import image
 def plot(preds, input_img, only_2d=True):
     """
     plot the original image and the landmarks.
-    ignoring the depth, only use [x,y] in the response.
+    ignoring the depth, only use [x,y] (2D) in the response.
     """
     preds = np.array(preds)
     plot_style = dict(marker='o',
