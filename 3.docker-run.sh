@@ -7,6 +7,7 @@ BASE_MANAGE_PORT=10001
 
 # create log folder
 mkdir -p logs/face_lm_3d
+mkdir -p debug/
 
 # Run the container
 docker run -it --rm --name=torchserve-face_lm_3d \
