@@ -4,6 +4,8 @@ In this repository, I am practicing how to deploy a face landmark application as
 
 The face landmark application is from [https://github.com/1adrianb/face-alignment](https://github.com/1adrianb/face-alignment).
 
+![demo output](assets/output-remote.png)
+
 ## Prerequisites
 
 We'll need docker to run everything. Please [install docker](https://docs.docker.com/get-docker/) and [give non-root user access](https://docs.docker.com/engine/install/linux-postinstall/). If you don't want to give non-root user access to docker due to security concern, please change the corresponding scripts accordingly.

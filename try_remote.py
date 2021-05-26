@@ -5,7 +5,7 @@ import requests
 
 url = "http://try.star-lab.ai:9003/predictions/face_lm_3d"
 url = "http://localhost:9003/predictions/face_lm_3d"
-img_path = "./assets/sida_1.png"
+img_path = "./assets/sida_2.png"
 headers = {
   'Content-Type': 'image/png'
 }
@@ -53,7 +53,7 @@ def plot(preds, input_img, only_2d=True):
                 'teeth': pred_type(slice(60, 68), (0.596, 0.875, 0.541, 0.4))
                 }
 
-    fig = plt.figure(figsize=plt.figaspect(.5))
+    fig = plt.figure()
     ax = fig.add_subplot(1, 1 if only_2d else 2, 1)
     ax.imshow(input_img)
 
