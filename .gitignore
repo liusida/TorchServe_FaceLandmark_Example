@@ -1,3 +1,12 @@
+debug
+logs
+model_store/**/*.zip
+model_store/**/*.pth
+model_store/**/*.mar
+
+
+################################################################################################################
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
